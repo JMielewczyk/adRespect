@@ -6,7 +6,7 @@
     <link href="dist/output.css" rel="stylesheet" />
     <title>Document</title>
   </head>
-  <body>
+  <body class="bg-black">
     <main class="w-screen max-w-screen-xl mx-auto overflow-hidden">
       <nav
         class="flex pl-16 pr-16 pt-2 pb-2 w-full h-14 justify-between items-center bg-white"
@@ -292,11 +292,11 @@
         </div>
         <div class="relative">
           <div
-            class="absolute flex justify-center items-center w-full bottom-0 left-0 h-[600px] bg-gradient-to-t from-beige via-beige via-25% z-10"
+            class="absolute pointer-events-none flex justify-center items-center w-full bottom-0 left-0 h-[600px] bg-gradient-to-t from-beige via-beige via-25% z-10"
           >
             <button
               id="btnLoadMoreImg"
-              class="flex mt-12 h-[50px] text-[16px] group justify-center items-center bg-transparent gap-2 border-[1px] border-black rounded-full pl-3 pr-3 pt-2 pb-2"
+              class="flex pointer-events-auto mt-12 h-[50px] text-[16px] group justify-center items-center bg-transparent gap-2 border-[1px] border-black rounded-full pl-3 pr-3 pt-2 pb-2"
             >
               Rozwiń<img
                 class="group-hover:animate-bounce customBlackSVG"
@@ -306,64 +306,73 @@
             </button>
           </div>
           <div id="macy-container">
-            <div class="grid-item">
+            <div class="gridItem">
               <img
+                id="gridItemPhoto"
                 loading="lazy"
                 src="src/assets/images/section_gallery/photo1.jpg"
                 alt=""
               />
             </div>
-            <div class="grid-item">
+            <div class="gridItem">
               <img
+                id="gridItemPhoto"
                 loading="lazy"
                 src="src/assets/images/section_gallery/photo2.jpg"
                 alt=""
               />
             </div>
-            <div class="grid-item">
+            <div class="gridItem">
               <img
+                id="gridItemPhoto"
                 loading="lazy"
                 src="src/assets/images/section_gallery/photo3.jpg"
                 alt=""
               />
             </div>
-            <div class="grid-item">
+            <div class="gridItem">
               <img
+                id="gridItemPhoto"
                 loading="lazy"
                 src="src/assets/images/section_gallery/photo4.jpg"
                 alt=""
               />
             </div>
-            <div class="grid-item">
+            <div class="gridItem">
               <img
+                id="gridItemPhoto"
                 loading="lazy"
                 src="src/assets/images/section_gallery/photo5.jpg"
                 alt=""
               />
             </div>
-            <div class="grid-item">
+            <div class="gridItem">
               <img
+                id="gridItemPhoto"
                 loading="lazy"
                 src="src/assets/images/section_gallery/photo6.jpg"
                 alt=""
               />
             </div>
-            <div class="grid-item">
+            <div class="gridItem">
               <img
+                id="gridItemPhoto"
                 loading="lazy"
                 src="src/assets/images/section_gallery/photo7.jpg"
                 alt=""
               />
             </div>
-            <div class="grid-item">
+            <div class="gridItem">
               <img
+                id="gridItemPhoto"
                 loading="lazy"
                 src="src/assets/images/section_gallery/photo8.jpg"
                 alt=""
               />
             </div>
-            <div class="grid-item">
+            <div class="gridItem">
               <img
+                id="gridItemPhoto"
                 loading="lazy"
                 src="src/assets/images/section_gallery/photo9.jpg"
                 alt=""
@@ -372,6 +381,64 @@
           </div>
         </div>
       </section>
+      <section
+        class="flex justify-center items-center pl-52 pr-52 pt-12 pb-12 bg-white"
+      >
+        <div
+          class="bg-green w-full h-full flex pt-16 pb-16 pl-8 pr-8 justify-around text-white"
+        >
+          <div>
+            <p class="text-[40px]">
+              Zostańmy w kontakcie! <br />
+              Znajdziesz nas na <em>Instagramie.</em>
+            </p>
+          </div>
+          <div class="">
+            Śledź nasze <br />
+            najnowsze realizacje!
+            <button
+              class="flex mt-6 h-[50px] text-[16px] text-green group justify-center items-center bg-white gap-2 border-[1px] border-white rounded-full pl-3 pr-3 pt-2 pb-2"
+            >
+              Instagram
+            </button>
+          </div>
+        </div>
+      </section>
+      <footer class="bg-black flex flex-col pl-52 pr-52 pt-12 pb-12 text-white">
+        <div class="flex justify-between">
+          <div>
+            <img src="src/assets/images/logo/giarddesignWhite.svg" alt="" />
+          </div>
+          <div class="flex justify-center items-center gap-6">
+            <p>Daj znać, co możemy dla Ciebie zrobić!</p>
+            <button
+              class="flex h-[50px] text-[16px] text-white group justify-center items-center bg-green gap-2 border-[1px] border-white rounded-full pl-3 pr-3 pt-2 pb-2"
+            >
+              Skontaktuj się z nami
+            </button>
+          </div>
+        </div>
+        <span class="bg-lightBeige w-full h-[1px] mt-12"></span>
+        <div class="flex justify-between">
+          <ul class="flex gap-12">
+            <li><a href="#"></a>Kontakt</li>
+            <li><a href="#"></a>Instagram</li>
+            <li><a href="#"></a>Facebook</li>
+            <li><a href="#"></a>LinkedIn</li>
+          </ul>
+          <div class="flex gap-12">
+            <p>000-000-000</p>
+            <p>giarddesign@kontakt.pl</p>
+          </div>
+        </div>
+        <div class="flex mt-32 justify-between">
+          <p>Prawa zastrzeżone &copy 2022</p>
+          <div class="flex gap-4">
+            <p>made by</p>
+            <img src="src/assets/images/logo/adRespect.svg" alt="" />
+          </div>
+        </div>
+      </footer>
     </main>
     <script src="./dist/main.js"></script>
   </body>
