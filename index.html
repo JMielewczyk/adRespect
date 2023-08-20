@@ -86,61 +86,207 @@
           </div>
         </ul>
       </nav>
-      <header class="w-full flex">
-        <div
-          class="basis-1/2 bg-beige flex flex-col justify-center items-center gap-[72px] pl-[64px] pr-[64px]"
-        >
-          <div class="flex flex-col gap-[44px]">
-            <h1 class="text-[60px]">
-              Nowoczesna <br />
-              aranżacja <br />
-              Twojego ogrodu
-            </h1>
-            <h5 class="text-[16px]">
-              Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka
-              realizacji. Oferujemy kompleksowy zakres usług z indywidualnym
-              podejściem do każdego projektu.
-            </h5>
+      <header
+        id="header"
+        class="w-[calc(1280px*4)] h-[700px] flex flex-row transition-all"
+      >
+        <div data-id="slide" class="flex w-[25%]">
+          <div
+            class="basis-1/2 bg-beige flex flex-col justify-center items-center gap-[72px] pl-[64px] pr-[64px]"
+          >
+            <div class="flex flex-col gap-[44px]">
+              <h1 class="text-[60px]">
+                Nowoczesna <br />
+                aranżacja <br />
+                Twojego ogrodu
+              </h1>
+              <h5 class="text-[16px]">
+                Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka
+                realizacji. Oferujemy kompleksowy zakres usług z indywidualnym
+                podejściem do każdego projektu.
+              </h5>
+            </div>
+            <div class="flex h-[50px] w-full gap-[36px]">
+              <button
+                class="flex justify-center items-center bg-green text-white rounded-full pl-3 pr-3 pt-2 pb-2"
+              >
+                Skontaktuj sie z nami
+              </button>
+              <button
+                class="flex text-[16px] group justify-center items-center bg-transparent gap-2 border-[1px] border-green rounded-full pl-3 pr-3 pt-2 pb-2"
+              >
+                Zobacz nasze realizacje
+                <img
+                  class="h-[16px] group-hover:animate-bounce"
+                  src="src/assets/images/misc/vector.svg"
+                  alt=""
+                />
+              </button>
+            </div>
           </div>
-          <div class="flex h-[50px] w-full gap-[36px]">
-            <button
-              class="flex justify-center items-center bg-green text-white rounded-full pl-3 pr-3 pt-2 pb-2"
-            >
-              Skontaktuj sie z nami
-            </button>
-            <button
-              class="flex text-[16px] group justify-center items-center bg-transparent gap-2 border-[1px] border-green rounded-full pl-3 pr-3 pt-2 pb-2"
-            >
-              Zobacz nasze realizacje
-              <img
-                class="h-[16px] group-hover:animate-bounce"
-                src="src/assets/images/misc/vector.svg"
-                alt=""
-              />
-            </button>
+          <div class="relative w-[50%] h-full">
+            <img
+              class="w-full h-full"
+              src="src/assets/images/header/headerPhoto1.jpg"
+              alt="Designed garden"
+            />
           </div>
         </div>
-        <div class="basis-1/2 relative">
-          <img
-            class="w-full"
-            src="src/assets/images/header/headerPhoto.jpg"
-            alt="Designed garden"
-          />
+        <div data-id="slide" class="flex w-[25%]">
           <div
-            class="group absolute bottom-0 right-0 bg-lightBeige flex justify-center items-center w-36 h-16 gap-3"
+            class="basis-1/2 bg-slate-500 flex flex-col justify-center items-center gap-[72px] pl-[64px] pr-[64px]"
           >
-            <button>
-              <img src="src/assets/images/misc/leftArrow.svg" alt="" />
-            </button>
-            <button>
-              <img src="src/assets/images/misc/rightArrow.svg" alt="" />
-            </button>
+            <div class="flex flex-col gap-[44px]">
+              <h1 class="text-[60px]">
+                Nowoczesna <br />
+                wizja <br />
+                ogrodu
+              </h1>
+              <h5 class="text-[16px]">
+                Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka
+                realizacji. Jesteśmy pasjonatami nowoczesnych aranżacji ogrodów.
+                Tworzymy kompleksowe projekty z indywidualnym podejściem do
+                każdego zadania, aby Twoja przestrzeń zewnętrzna nabrała
+                wyjątkowego charakteru.
+              </h5>
+            </div>
+            <div class="flex h-[50px] w-full gap-[36px]">
+              <button
+                class="flex justify-center items-center bg-white text-black rounded-full pl-3 pr-3 pt-2 pb-2"
+              >
+                Skontaktuj sie z nami
+              </button>
+              <button
+                class="flex text-[16px] group justify-center items-center bg-transparent gap-2 border-[1px] border-white rounded-full pl-3 pr-3 pt-2 pb-2"
+              >
+                Zobacz nasze realizacje
+                <img
+                  class="h-[16px] group-hover:animate-bounce customWhiteSvg"
+                  src="src/assets/images/misc/vector.svg"
+                  alt=""
+                />
+              </button>
+            </div>
+          </div>
+          <div class="basis-1/2 relative">
+            <img
+              class="w-full h-full"
+              src="src/assets/images/header/headerPhoto2.jpg"
+              alt="Designed garden"
+            />
+          </div>
+        </div>
+        <div data-id="slide" class="flex w-[25%]">
+          <div
+            class="basis-1/2 bg-green flex flex-col justify-center items-center gap-[72px] pl-[64px] pr-[64px]"
+          >
+            <div class="flex flex-col gap-[44px]">
+              <h1 class="text-[60px]">
+                Innowacyjne <br />
+                podejście do <br />
+                aranżacji ogrodu
+              </h1>
+              <h5 class="text-[16px]">
+                Twój ogród zasługuje na wyjątkowe rozwiązania. Marka GiardDesign
+                to gwarancja wieloletniego doświadczenia oraz estetyki
+                realizacji na najwyższym poziomie. Nasze projekty opierają się
+                na nowoczesności i unikalności, zawsze uwzględniając Twój gust i
+                preferencje.
+              </h5>
+            </div>
+            <div class="flex h-[50px] w-full gap-[36px]">
+              <button
+                class="flex justify-center items-center bg-lightBeige text-black rounded-full pl-3 pr-3 pt-2 pb-2"
+              >
+                Skontaktuj sie z nami
+              </button>
+              <button
+                class="flex text-[16px] group justify-center items-center bg-transparent gap-2 border-[1px] border-lightBeige rounded-full pl-3 pr-3 pt-2 pb-2"
+              >
+                Zobacz nasze realizacje
+                <img
+                  class="h-[16px] group-hover:animate-bounce customBlackSVG"
+                  src="src/assets/images/misc/vector.svg"
+                  alt=""
+                />
+              </button>
+            </div>
+          </div>
+          <div class="basis-1/2 relative">
+            <img
+              class="w-full h-full"
+              src="src/assets/images/header/headerPhoto3.jpg"
+              alt="Designed garden"
+            />
+          </div>
+        </div>
+        <div data-id="slide" class="flex w-[25%]">
+          <div
+            class="basis-1/2 bg-blue-500 flex flex-col justify-center items-center gap-[72px] pl-[64px] pr-[64px]"
+          >
+            <div class="flex flex-col gap-[44px]">
+              <h1 class="text-[60px]">
+                Eksluzywne <br />
+                aranżacje dla <br />
+                Twojego ogrodu
+              </h1>
+              <h5 class="text-[16px]">
+                Twój ogród może stać się oazą spokoju i piękna dzięki Marki
+                GiardDesign. Nasza firma to synonim doskonałego wyczucia stylu
+                oraz pasji do tworzenia nowoczesnych kompozycji. Oferujemy
+                usługi oparte na naszym bogatym doświadczeniu, zawsze kładąc
+                nacisk na indywidualne potrzeby i cele projektu.
+              </h5>
+            </div>
+            <div class="flex h-[50px] w-full gap-[36px]">
+              <button
+                class="flex justify-center items-center bg-green text-white rounded-full pl-3 pr-3 pt-2 pb-2"
+              >
+                Skontaktuj sie z nami
+              </button>
+              <button
+                class="flex text-[16px] group justify-center items-center bg-transparent gap-2 border-[1px] border-green rounded-full pl-3 pr-3 pt-2 pb-2"
+              >
+                Zobacz nasze realizacje
+                <img
+                  class="h-[16px] group-hover:animate-bounce"
+                  src="src/assets/images/misc/vector.svg"
+                  alt=""
+                />
+              </button>
+            </div>
+          </div>
+          <div class="basis-1/2 relative">
+            <img
+              class="w-full h-full"
+              src="src/assets/images/header/headerPhoto4.jpg"
+              alt="Designed garden"
+            />
           </div>
         </div>
       </header>
       <section
-        class="w-full flex flex-col justify-center items-center pt-20 pb-20 pl-[64px] pr-[64px] bg-lightBeige gap-24"
+        class="w-full relative flex flex-col justify-center items-center pt-20 pb-20 pl-[64px] pr-[64px] bg-lightBeige gap-24"
       >
+        <div
+          id="slideBtnsContainer"
+          class="group absolute top-0 right-0 -translate-y-full switchHeaderBtns bg-lightBeige flex justify-center items-center w-36 h-16 gap-3"
+        >
+          <button>
+            <img
+              id="arrowLeft"
+              src="src/assets/images/misc/leftArrow.svg"
+              alt=""
+            />
+          </button>
+          <button>
+            <img
+              id="arrowRight"
+              src="src/assets/images/misc/rightArrow.svg"
+              alt=""
+            />
+          </button>
+        </div>
         <div class="w-full pl-16 pr-16">
           <p class="text-green text-[12px]">Oferta</p>
           <p class="text-[48px]">Działamy <em>kompleksowo</em></p>
@@ -421,10 +567,10 @@
         <span class="bg-lightBeige w-full h-[1px] mt-12"></span>
         <div class="flex justify-between">
           <ul class="flex gap-12">
-            <li><a href="#"></a>Kontakt</li>
-            <li><a href="#"></a>Instagram</li>
-            <li><a href="#"></a>Facebook</li>
-            <li><a href="#"></a>LinkedIn</li>
+            <li class="cursor-pointer"><a href="#"></a>Kontakt</li>
+            <li class="cursor-pointer"><a href="#"></a>Instagram</li>
+            <li class="cursor-pointer"><a href="#"></a>Facebook</li>
+            <li class="cursor-pointer"><a href="#"></a>LinkedIn</li>
           </ul>
           <div class="flex gap-12">
             <p>000-000-000</p>

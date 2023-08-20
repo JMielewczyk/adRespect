@@ -10,6 +10,62 @@ var macyInstance = Macy({
   columns: 3,
 });
 
+const header = document.querySelector("#header");
+
+let slideElements = [];
+for (let i = 0; i < header.children.length; i++) {
+  if (header.children[i].dataset.id === "slide") {
+    slideElements = [...slideElements, "slide"];
+  }
+}
+slideElements = slideElements.length;
+
+let currentSlideIndex = 0;
+let currentTransformX = 0;
+const widthOfOneElement = 100 / slideElements;
+
+const changePosition = (slideIndex, type) => {
+  if (slideIndex > slideElements - 1) {
+    currentTransformX = 0;
+    header.style.transform = `translateX(${currentTransformX})`;
+    currentSlideIndex = 0;
+  } else if (slideIndex < 0) {
+    currentTransformX = widthOfOneElement * slideElements - widthOfOneElement;
+    header.style.transform = `translateX(-${currentTransformX}%)`;
+    currentSlideIndex = slideElements - 1;
+  } else if (type === "arrowLeft") {
+    currentTransformX = currentTransformX - widthOfOneElement;
+    header.style.transform = `translateX(-${currentTransformX}%)`;
+  } else if (type === "arrowRight" || type === "auto") {
+    currentTransformX = currentTransformX + widthOfOneElement;
+    header.style.transform = `translateX(-${currentTransformX}%)`;
+  }
+};
+
+let intervalDelay = 3000;
+let headerSlideShow;
+const handleInterval = () => {
+  headerSlideShow = setInterval(() => {
+    currentSlideIndex++;
+    changePosition(currentSlideIndex, "auto");
+  }, intervalDelay);
+};
+handleInterval();
+
+const slideBtnsContainer = document.querySelector("#slideBtnsContainer");
+slideBtnsContainer.addEventListener("click", (e) => {
+  const arrowId = e.target.id;
+  if (arrowId === "arrowLeft") {
+    currentSlideIndex--;
+    changePosition(currentSlideIndex, "arrowLeft");
+  } else if (arrowId === "arrowRight") {
+    currentSlideIndex++;
+    changePosition(currentSlideIndex, "arrowRight");
+  }
+  clearInterval(headerSlideShow);
+  setTimeout(handleInterval, 1000);
+});
+
 let fetchedImages = [];
 
 const btnLoadMoreImg = document.querySelector("#btnLoadMoreImg");
@@ -87,7 +143,7 @@ macyContainer.addEventListener("click", async (e) => {
 const navOfferContainer = document.querySelector("#navOfferContainer");
 navOfferContainer.addEventListener("click", () => {
   const dropDownMenu = navOfferContainer.querySelector("#dropDownMenu");
-  dropDownMenuClasses = ["h-28"];
+  const dropDownMenuClasses = ["h-28"];
   dropDownMenuClasses.forEach((className) =>
     dropDownMenu.classList.toggle(className)
   );
