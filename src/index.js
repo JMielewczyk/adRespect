@@ -1,14 +1,98 @@
 import Macy from "macy";
 
-const macyContainer = document.getElementById("macy-container");
+// Navbar - styling for smaller devices
 
-var macyInstance = Macy({
-  container: macyContainer,
-  trueOrder: false,
-  waitForImages: true,
-  margin: 20,
-  columns: 3,
+let offerHamburgerFlag = false;
+
+const hamburger = document.querySelector("#hamburger");
+hamburger.addEventListener("click", () => {
+  const hamburgerMenu = document.querySelector("#hamburgerMenu");
+  hamburgerMenu.style.transform = `translateX(0)`;
 });
+
+const offerHamburger = document.querySelector("#offerHamburger");
+offerHamburger.addEventListener("click", () => {
+  const allChildsOfOffer = document.querySelectorAll(
+    `[data-id="childOfferHamburger"`
+  );
+  const offerHamburgerContainer = document.querySelector(
+    "#offerHamburgerContainer"
+  );
+  if (offerHamburgerFlag === true) {
+    offerHamburgerContainer.style.minHeight = "100px";
+    allChildsOfOffer.forEach((child) => (child.style.height = "0"));
+    offerHamburgerFlag = false;
+  } else {
+    offerHamburgerContainer.style.minHeight = "400px";
+    allChildsOfOffer.forEach((child) => (child.style.height = "100%"));
+    offerHamburgerFlag = true;
+  }
+});
+
+const closeBtnHamburgerMenu = document.querySelector("#closeBtnHamburgerMenu");
+closeBtnHamburgerMenu.addEventListener("click", () => {
+  const hamburgerMenu = document.querySelector("#hamburgerMenu");
+  hamburgerMenu.style.transform = `translateX(100%)`;
+});
+
+//Navbar drop down menu - only for devices from 768px
+
+const navOfferContainer = document.querySelector("#navOfferContainer");
+navOfferContainer.addEventListener("click", () => {
+  const dropDownMenu = navOfferContainer.querySelector("#dropDownMenu");
+  const dropDownMenuClasses = ["h-28"];
+  dropDownMenuClasses.forEach((className) =>
+    dropDownMenu.classList.toggle(className)
+  );
+
+  const offerArrowClasses = ["rotate-180"];
+  const offerArrow = document.querySelector("#offerArrow");
+  offerArrowClasses.forEach((className) =>
+    offerArrow.classList.toggle("rotate-180")
+  );
+});
+
+const magnifier = document.querySelector("#magnifier");
+magnifier.addEventListener("click", () => {
+  const magnifierClasses = ["left-0"];
+  magnifierClasses.forEach((className) => magnifier.classList.add(className));
+
+  const searchInputClasses = ["w-full", "pl-6", "pr-12"];
+  const searchInput = document.querySelector("#searchInput");
+  searchInputClasses.forEach((className) =>
+    searchInput.classList.add(className)
+  );
+  searchInput.focus();
+
+  const searchContainerClasses = [
+    "flex",
+    "justify-center",
+    "items-center",
+    "basis-[300%]",
+    "relative",
+  ];
+  const searchContainer = document.querySelector("#searchContainer");
+
+  searchContainerClasses.forEach(
+    (className) =>
+      (searchContainer.className = searchContainerClasses.join(" "))
+  );
+
+  const btnSubmitClasses = [
+    "absolute",
+    "w-12",
+    "right-0",
+    "justify-center",
+    "items-center",
+  ];
+  const btnSubmit = document.querySelector("#btnSubmit");
+  btnSubmitClasses.forEach(
+    (className) => (btnSubmit.className = btnSubmitClasses.join(" "))
+  );
+});
+
+// ---------------------------------------------------------------------------
+// Header - slideShow + manual change. After manual change there is a delay of 1 second to next timeout.
 
 const header = document.querySelector("#header");
 
@@ -44,7 +128,9 @@ const changePosition = (slideIndex, type) => {
 
 let intervalDelay = 3000;
 let headerSlideShow;
+let onGoingTimeout = false;
 const handleInterval = () => {
+  onGoingTimeout = false;
   headerSlideShow = setInterval(() => {
     currentSlideIndex++;
     changePosition(currentSlideIndex, "auto");
@@ -63,7 +149,43 @@ slideBtnsContainer.addEventListener("click", (e) => {
     changePosition(currentSlideIndex, "arrowRight");
   }
   clearInterval(headerSlideShow);
+  if (onGoingTimeout) return;
   setTimeout(handleInterval, 1000);
+  onGoingTimeout = true;
+});
+
+// Btn to scroll down to photos section
+const sectionProjects = document.querySelector("#sectionProjects");
+const btnsScroll = document.querySelectorAll('[data-id="btnScroll"');
+
+btnsScroll.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const topOfSection = sectionProjects.getBoundingClientRect().top;
+    window.scrollTo({
+      top: topOfSection,
+      left: 0,
+      behavior: "smooth",
+    });
+  });
+});
+
+// -----------------------------------------------------------------
+// Photos section. After clicking button 10 more images are being fetched from random images API.
+// Then new elements are being created and appended to photos section container.
+// This is a small simulation of how it could be working when fetching images from server.
+
+// Macy.js used for styling the section of photos.
+const macyContainer = document.getElementById("macy-container");
+
+var macyInstance = Macy({
+  container: macyContainer,
+  trueOrder: false,
+  waitForImages: true,
+  margin: 20,
+  columns: 3,
+  breakAt: {
+    640: 2,
+  },
 });
 
 let fetchedImages = [];
@@ -121,7 +243,7 @@ macyContainer.addEventListener("click", async (e) => {
     "fixed top-0 left-0 flex justify-center items-center w-screen h-screen z-10 bg-gray-500/75";
   background.id = "popUpBackground";
   newContainer.className =
-    " w-[80vw] max-w-[1280px] h-[55vh] relative border-2 border-black bg-white";
+    " w-[80vw] max-w-[1536px] h-[75vh] relative border-2 border-black bg-white";
   newImg.className = "w-full h-full object-contain overflow-hidden";
   exitBtn.className =
     "absolute cursor-pointer right-0 top-0 rounded-full border-[1px] border-black bg-white w-[25px] h-[25px] flex justify-center items-center -translate-y-[50%] translate-x-[50%]";
@@ -139,57 +261,4 @@ macyContainer.addEventListener("click", async (e) => {
     } else return;
   });
 });
-
-const navOfferContainer = document.querySelector("#navOfferContainer");
-navOfferContainer.addEventListener("click", () => {
-  const dropDownMenu = navOfferContainer.querySelector("#dropDownMenu");
-  const dropDownMenuClasses = ["h-28"];
-  dropDownMenuClasses.forEach((className) =>
-    dropDownMenu.classList.toggle(className)
-  );
-
-  const offerArrowClasses = ["rotate-180"];
-  const offerArrow = document.querySelector("#offerArrow");
-  offerArrowClasses.forEach((className) =>
-    offerArrow.classList.toggle("rotate-180")
-  );
-});
-
-const magnifier = document.querySelector("#magnifier");
-magnifier.addEventListener("click", () => {
-  const magnifierClasses = ["left-0"];
-  magnifierClasses.forEach((className) => magnifier.classList.add(className));
-
-  const searchInputClasses = ["w-full", "pl-6", "pr-12"];
-  const searchInput = document.querySelector("#searchInput");
-  searchInputClasses.forEach((className) =>
-    searchInput.classList.add(className)
-  );
-  searchInput.focus();
-
-  const searchContainerClasses = [
-    "flex",
-    "justify-center",
-    "items-center",
-    "basis-[300%]",
-    "relative",
-  ];
-  const searchContainer = document.querySelector("#searchContainer");
-
-  searchContainerClasses.forEach(
-    (className) =>
-      (searchContainer.className = searchContainerClasses.join(" "))
-  );
-
-  const btnSubmitClasses = [
-    "absolute",
-    "w-12",
-    "right-0",
-    "justify-center",
-    "items-center",
-  ];
-  const btnSubmit = document.querySelector("#btnSubmit");
-  btnSubmitClasses.forEach(
-    (className) => (btnSubmit.className = btnSubmitClasses.join(" "))
-  );
-});
+// -------------------------------------------------------------------------

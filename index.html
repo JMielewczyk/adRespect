@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="dist/output.css" rel="stylesheet" />
-    <title>Document</title>
+    <title>adRespect</title>
   </head>
   <body class="bg-black">
-    <main class="w-screen max-w-screen-xl mx-auto overflow-hidden">
+    <main class="w-screen max-w-screen-2xl mx-auto overflow-hidden">
       <nav
-        class="flex pl-16 pr-16 pt-2 pb-2 w-full h-14 justify-between items-center bg-white"
+        class="flex md:px-16 px-4 pt-2 pb-2 w-full h-14 justify-between items-center bg-white"
       >
-        <div class="basis-1/2">
+        <div class="xl:basis-1/2 lg:basis-1/3 md:basis-1/4 basis-3/4">
           <img src="src/assets/images/logo/giarddesign.svg" alt="" />
         </div>
-        <ul class="flex basis-1/2">
+        <ul class="md:flex xl:basis-1/2 lg:basis-2/3 md:basis-3/4 hidden">
           <div
             id="navOfferContainer"
             class="flex justify-center basis-full relative cursor-pointer select-none"
@@ -85,35 +85,114 @@
             </form>
           </div>
         </ul>
+        <button
+          id="hamburger"
+          class="md:hidden basis-1/4 h-full flex justify-end items-center"
+        >
+          <img
+            class="w-[50%] h-[75%]"
+            src="src/assets/images/misc/hamburger.svg"
+            alt=""
+          />
+        </button>
+        <div
+          id="hamburgerMenu"
+          class="fixed md:hidden translate-x-full top-0 left-0 w-screen h-screen bg-white z-10 transition-all flex flex-col px-8 py-8"
+        >
+          <div class="w-full flex justify-end">
+            <button
+              id="closeBtnHamburgerMenu"
+              class="flex justify-end h-[50px] w-[50px]"
+            >
+              <img
+                class="w-full"
+                src="src/assets/images/misc/cross.svg"
+                alt=""
+              />
+            </button>
+          </div>
+          <ul class="flex flex-col">
+            <div
+              id="offerHamburgerContainer"
+              class="flex flex-col items-center basis-full min-h-[150px] overflow-hidden mt-12 transition-all"
+            >
+              <div
+                id="offerHamburger"
+                class="text-4xl h-full flex items-start"
+                href="#"
+              >
+                Oferta
+                <img
+                  class="w-10 h-10"
+                  src="src/assets/images/misc/arrowDown.svg"
+                  alt=""
+                />
+              </div>
+              <div
+                data-id="childOfferHamburger"
+                class="text-2xl h-0 cursor-pointer"
+                href="#"
+              >
+                Zaplanuj sam!
+              </div>
+              <div
+                data-id="childOfferHamburger"
+                class="text-2xl h-0 cursor-pointer text-center"
+                href="#"
+              >
+                Budowa ogrodu w 3D
+              </div>
+              <div
+                data-id="childOfferHamburger"
+                class="text-2xl h-0 cursor-pointer"
+                href="#"
+              >
+                Wycena projektu
+              </div>
+            </div>
+            <li class="flex justify-center basis-full">
+              <a class="h-[150px] text-4xl" href="#">O firmie</a>
+            </li>
+            <li class="flex justify-center basis-full">
+              <a class="h-[150px] text-4xl" href="#">Realizacje</a>
+            </li>
+            <li class="flex justify-center basis-full">
+              <a class="h-[150px] text-4xl" href="#">Kontakt</a>
+            </li>
+          </ul>
+        </div>
       </nav>
       <header
         id="header"
-        class="w-[calc(1280px*4)] h-[700px] flex flex-row transition-all"
+        class="w-[400vw] max-w-[6144px] flex flex-row transition-all"
       >
-        <div data-id="slide" class="flex w-[25%]">
+        <div data-id="slide" class="flex w-[25%] relative">
           <div
-            class="basis-1/2 bg-beige flex flex-col justify-center items-center gap-[72px] pl-[64px] pr-[64px]"
+            class="lg:basis-1/2 md:basis-[55%] basis-full md:bg-beige bg-transparent flex flex-col justify-center items-center xl:gap-28 lg:gap-16 gap-6 xl:pl-16 xl:pr-16 lg:pl-10 lg:pr-10 pl-4 pr-4 pt-6 md:pb-6 pb-[100px]"
           >
-            <div class="flex flex-col gap-[44px]">
-              <h1 class="text-[60px]">
+            <div class="flex flex-col xl:gap-11 gap-6">
+              <h1 class="xl:text-6xl lg:text-5xl text-4xl">
                 Nowoczesna <br />
                 aranżacja <br />
                 Twojego ogrodu
               </h1>
-              <h5 class="text-[16px]">
+              <h5 class="text-base">
                 Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka
                 realizacji. Oferujemy kompleksowy zakres usług z indywidualnym
                 podejściem do każdego projektu.
               </h5>
             </div>
-            <div class="flex h-[50px] w-full gap-[36px]">
+            <div
+              class="flex h-[50px] w-full xl:gap-9 lg:gap-6 gap-4 md:justify-start md:flex-row flex-col"
+            >
               <button
-                class="flex justify-center items-center bg-green text-white rounded-full pl-3 pr-3 pt-2 pb-2"
+                class="flex md:w-full w-fit justify-center items-center bg-green text-white rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
               >
                 Skontaktuj sie z nami
               </button>
               <button
-                class="flex text-[16px] group justify-center items-center bg-transparent gap-2 border-[1px] border-green rounded-full pl-3 pr-3 pt-2 pb-2"
+                data-id="btnScroll"
+                class="flex md:w-full w-fit text-base group justify-center items-center bg-transparent gap-2 border-[1px] border-green rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
               >
                 Zobacz nasze realizacje
                 <img
@@ -123,41 +202,48 @@
                 />
               </button>
             </div>
+            <img src="" alt="" />
           </div>
-          <div class="relative w-[50%] h-full">
+          <div
+            class="lg:basis-1/2 md:basis-[45%] basis-full h-full md:static absolute -z-10 top-0 left-0 bottom-0 right-0"
+          >
+            <div
+              class="md:hidden absolute h-full w-full bg-white bg-opacity-50 z-10"
+            ></div>
             <img
-              class="w-full h-full"
+              class="w-full h-full blur-[1.5px] md:blur-0"
               src="src/assets/images/header/headerPhoto1.jpg"
               alt="Designed garden"
             />
           </div>
         </div>
-        <div data-id="slide" class="flex w-[25%]">
+        <div data-id="slide" class="flex w-[25%] relative">
           <div
-            class="basis-1/2 bg-slate-500 flex flex-col justify-center items-center gap-[72px] pl-[64px] pr-[64px]"
+            class="lg:basis-1/2 md:basis-[55%] md:bg-green bg-transparent md:text-white text-black flex flex-col justify-center items-center xl:gap-28 gap-12 lg:gap-16 xl:pl-16 xl:pr-16 lg:pl-10 lg:pr-10 pl-4 pr-4 pt-6 md:pb-6 pb-[100px]"
           >
-            <div class="flex flex-col gap-[44px]">
-              <h1 class="text-[60px]">
+            <div class="flex flex-col xl:gap-11 gap-6">
+              <h1 class="xl:text-6xl lg:text-5xl text-4xl">
                 Nowoczesna <br />
                 wizja <br />
                 ogrodu
               </h1>
-              <h5 class="text-[16px]">
-                Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka
-                realizacji. Jesteśmy pasjonatami nowoczesnych aranżacji ogrodów.
+              <h5 class="text-base">
                 Tworzymy kompleksowe projekty z indywidualnym podejściem do
                 każdego zadania, aby Twoja przestrzeń zewnętrzna nabrała
                 wyjątkowego charakteru.
               </h5>
             </div>
-            <div class="flex h-[50px] w-full gap-[36px]">
+            <div
+              class="flex h-[50px] w-full xl:gap-9 lg:gap-6 gap-4 md:justify-start justify-around md:flex-row flex-col"
+            >
               <button
-                class="flex justify-center items-center bg-white text-black rounded-full pl-3 pr-3 pt-2 pb-2"
+                class="flex w-fit md:w-full justify-center items-center bg-beige text-white rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
               >
                 Skontaktuj sie z nami
               </button>
               <button
-                class="flex text-[16px] group justify-center items-center bg-transparent gap-2 border-[1px] border-white rounded-full pl-3 pr-3 pt-2 pb-2"
+                data-id="btnScroll"
+                class="flex w-fit md:w-full text-base group justify-center items-center bg-transparent gap-2 border-[1px] border-beige rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
               >
                 Zobacz nasze realizacje
                 <img
@@ -168,40 +254,45 @@
               </button>
             </div>
           </div>
-          <div class="basis-1/2 relative">
+          <div
+            class="lg:basis-1/2 md:basis-[45%] basis-full h-full md:static absolute -z-10 top-0 left-0 bottom-0 right-0"
+          >
+            <div
+              class="md:hidden absolute h-full w-full bg-white bg-opacity-50 z-10"
+            ></div>
             <img
-              class="w-full h-full"
+              class="w-full h-full blur-[1.5px] md:blur-0"
               src="src/assets/images/header/headerPhoto2.jpg"
               alt="Designed garden"
             />
           </div>
         </div>
-        <div data-id="slide" class="flex w-[25%]">
+        <div data-id="slide" class="flex w-[25%] relative">
           <div
-            class="basis-1/2 bg-green flex flex-col justify-center items-center gap-[72px] pl-[64px] pr-[64px]"
+            class="lg:basis-1/2 md:basis-[55%] md:bg-beige bg-transparent flex flex-col justify-center items-center xl:gap-28 lg:gap-16 gap-12 xl:pl-16 xl:pr-16 lg:pl-10 lg:pr-10 pl-4 pr-4 pt-6 md:pb-6 pb-[100px]"
           >
-            <div class="flex flex-col gap-[44px]">
-              <h1 class="text-[60px]">
+            <div class="flex flex-col lg:gap-11 gap-6">
+              <h1 class="xl:text-6xl lg:text-5xl text-4xl">
                 Innowacyjne <br />
                 podejście do <br />
                 aranżacji ogrodu
               </h1>
-              <h5 class="text-[16px]">
-                Twój ogród zasługuje na wyjątkowe rozwiązania. Marka GiardDesign
-                to gwarancja wieloletniego doświadczenia oraz estetyki
-                realizacji na najwyższym poziomie. Nasze projekty opierają się
-                na nowoczesności i unikalności, zawsze uwzględniając Twój gust i
-                preferencje.
+              <h5 class="text-base">
+                Nasze projekty opierają się na nowoczesności i unikalności,
+                zawsze uwzględniając Twój gust i preferencje.
               </h5>
             </div>
-            <div class="flex h-[50px] w-full gap-[36px]">
+            <div
+              class="flex h-[50px] w-full xl:gap-9 lg:gap-6 gap-4 md:justify-start justify-around md:flex-row flex-col"
+            >
               <button
-                class="flex justify-center items-center bg-lightBeige text-black rounded-full pl-3 pr-3 pt-2 pb-2"
+                class="flex w-fit md:w-full justify-center items-center bg-green text-white rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
               >
                 Skontaktuj sie z nami
               </button>
               <button
-                class="flex text-[16px] group justify-center items-center bg-transparent gap-2 border-[1px] border-lightBeige rounded-full pl-3 pr-3 pt-2 pb-2"
+                data-id="btnScroll"
+                class="flex w-fit md:w-full text-base group justify-center items-center bg-transparent gap-2 border-[1px] border-green rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
               >
                 Zobacz nasze realizacje
                 <img
@@ -212,40 +303,47 @@
               </button>
             </div>
           </div>
-          <div class="basis-1/2 relative">
+          <div
+            class="lg:basis-1/2 md:basis-[45%] basis-full h-full md:static absolute -z-10 top-0 left-0 bottom-0 right-0"
+          >
+            <div
+              class="md:hidden absolute h-full w-full bg-white bg-opacity-50 z-10"
+            ></div>
             <img
-              class="w-full h-full"
+              class="w-full h-full blur-[1.5px] md:blur-0"
               src="src/assets/images/header/headerPhoto3.jpg"
               alt="Designed garden"
             />
           </div>
         </div>
-        <div data-id="slide" class="flex w-[25%]">
+        <div data-id="slide" class="flex w-[25%] relative">
           <div
-            class="basis-1/2 bg-blue-500 flex flex-col justify-center items-center gap-[72px] pl-[64px] pr-[64px]"
+            class="lg:basis-1/2 md:basis-[55%] md:bg-green bg-transparent md:text-white text-black flex flex-col justify-center items-center xl:gap-28 lg:gap-16 gap-12 xl:pl-16 xl:pr-16 lg:pl-10 lg:pr-10 pl-4 pr-4 pt-6 md:pb-6 pb-[100px]"
           >
-            <div class="flex flex-col gap-[44px]">
-              <h1 class="text-[60px]">
+            <div class="flex flex-col lg:gap-11 gap-6">
+              <h1 class="xl:text-6xl lg:text-5xl text-4xl">
                 Eksluzywne <br />
                 aranżacje dla <br />
                 Twojego ogrodu
               </h1>
-              <h5 class="text-[16px]">
-                Twój ogród może stać się oazą spokoju i piękna dzięki Marki
-                GiardDesign. Nasza firma to synonim doskonałego wyczucia stylu
-                oraz pasji do tworzenia nowoczesnych kompozycji. Oferujemy
-                usługi oparte na naszym bogatym doświadczeniu, zawsze kładąc
-                nacisk na indywidualne potrzeby i cele projektu.
+              <h5 class="text-base">
+                Nasza firma to synonim doskonałego wyczucia stylu oraz pasji do
+                tworzenia nowoczesnych kompozycji. Oferujemy usługi oparte na
+                naszym bogatym doświadczeniu, zawsze kładąc nacisk na
+                indywidualne potrzeby i cele projektu.
               </h5>
             </div>
-            <div class="flex h-[50px] w-full gap-[36px]">
+            <div
+              class="flex h-[50px] w-full xl:gap-9 lg:gap-6 gap-4 md:justify-start justify-around flex-col md:flex-row"
+            >
               <button
-                class="flex justify-center items-center bg-green text-white rounded-full pl-3 pr-3 pt-2 pb-2"
+                class="flex w-fit md:w-full justify-center items-center bg-beige text-white rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
               >
                 Skontaktuj sie z nami
               </button>
               <button
-                class="flex text-[16px] group justify-center items-center bg-transparent gap-2 border-[1px] border-green rounded-full pl-3 pr-3 pt-2 pb-2"
+                data-id="btnScroll"
+                class="flex w-fit md:w-full text-base group justify-center items-center bg-transparent gap-2 border-[1px] border-beige rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
               >
                 Zobacz nasze realizacje
                 <img
@@ -256,9 +354,14 @@
               </button>
             </div>
           </div>
-          <div class="basis-1/2 relative">
+          <div
+            class="lg:basis-1/2 md:basis-[45%] basis-full h-full md:static absolute -z-10 top-0 left-0 bottom-0 right-0"
+          >
+            <div
+              class="md:hidden absolute h-full w-full bg-white bg-opacity-50 z-10"
+            ></div>
             <img
-              class="w-full h-full"
+              class="w-full h-full blur-[1.5px] md:blur-0"
               src="src/assets/images/header/headerPhoto4.jpg"
               alt="Designed garden"
             />
@@ -266,7 +369,7 @@
         </div>
       </header>
       <section
-        class="w-full relative flex flex-col justify-center items-center pt-20 pb-20 pl-[64px] pr-[64px] bg-lightBeige gap-24"
+        class="w-full relative flex flex-col justify-center items-center md:py-20 md:px-16 py-10 px-8 bg-lightBeige xl:gap-24 gap-14"
       >
         <div
           id="slideBtnsContainer"
@@ -287,19 +390,21 @@
             />
           </button>
         </div>
-        <div class="w-full pl-16 pr-16">
+        <div class="w-full md:px-16 flex flex-col 2xl:gap-5">
           <p class="text-green text-[12px]">Oferta</p>
-          <p class="text-[48px]">Działamy <em>kompleksowo</em></p>
-          <p class="text-[16px] mt-6">
+          <p class="xl:text-5xl lg:text-4xl">Działamy <em>kompleksowo</em></p>
+          <p class="text-base mt-6">
             Oferujemy kompletną obsługę inwestycji terenów zielonych.
             Projektujemy nowoczesne ogrody przydomowe oraz rezydencjonalne.
             Stworzymy dla Ciebie projekt, zwizualizujemy go i wcielimy w życie,
             a na każdym etapie posłużymy radą i wieloletnim doświadczeniem.
           </p>
         </div>
-        <div class="flex gap-12">
+        <div
+          class="flex md:justify-between lg:justify-start lg:gap-12 gap-14 lg:flex-nowrap flex-wrap"
+        >
           <div
-            class="bg-white rounded-3xl p-12 group hover:bg-green active:[transform:rotateY(180deg)] transition-all hover:text-white sectionBox"
+            class="bg-white md:w-[40%] rounded-3xl p-12 group hover:bg-green active:[transform:rotateY(180deg)] transition-all hover:text-white sectionBox"
           >
             <img
               class="customWhiteSvg"
@@ -312,7 +417,7 @@
               wykorzystaniem istniejącej przestrzeni.
             </p>
             <a
-              class="flex justify-start items-center text-[16px] group-hover:text-white text-green mt-12 h-6 underline underline-offset-4"
+              class="flex justify-start items-center text-base group-hover:text-white text-green mt-12 h-6 underline underline-offset-4"
               href="#"
               >Dowiedz się więcej
               <svg
@@ -330,7 +435,7 @@
             </a>
           </div>
           <div
-            class="bg-white rounded-3xl p-12 group hover:text-white hover:bg-green transition-all sectionBox"
+            class="bg-white md:w-[40%] rounded-3xl p-12 group hover:text-white hover:bg-green transition-all sectionBox"
           >
             <img
               class="customWhiteSvg"
@@ -344,7 +449,7 @@
               animowanego w technologii 3D.
             </p>
             <a
-              class="flex justify-start items-center text-[16px] group-hover:text-white text-green mt-12 h-6 underline underline-offset-4"
+              class="flex justify-start items-center text-base group-hover:text-white text-green mt-12 h-6 underline underline-offset-4"
               href="#"
               >Dowiedz się więcej
               <svg
@@ -362,7 +467,7 @@
             </a>
           </div>
           <div
-            class="bg-white rounded-3xl p-12 group hover:bg-green hover:text-white transition-all sectionBox"
+            class="bg-white md:w-[40%] md:my-0 md:mx-auto lg:mx-0 rounded-3xl p-12 group hover:bg-green hover:text-white transition-all sectionBox"
           >
             <img
               class="customWhiteSvg"
@@ -375,7 +480,7 @@
               zaawansowanych technologii.
             </p>
             <a
-              class="flex justify-start items-center text-[16px] group-hover:text-white text-green mt-12 h-6 underline underline-offset-4"
+              class="flex justify-start items-center text-base group-hover:text-white text-green mt-12 h-6 underline underline-offset-4"
               href="#"
               >Dowiedz się więcej
               <svg
@@ -394,23 +499,29 @@
           </div>
         </div>
       </section>
-      <section class="flex">
-        <div class="basis-1/2">
+      <section class="flex md:static relative">
+        <div
+          class="lg:basis-1/2 md:basis-[45%] basis-full md:static absolute top-0 left-0 bottom-0 right-0"
+        >
           <img
+            class="w-full h-full blur-[1.5px] md:blur-0"
             src="src/assets/images/section_2/leftSideImg.jpg"
             alt="Garden in Japan style"
           />
         </div>
         <div
-          class="basis-1/2 flex flex-col justify-center items-start pl-[64px] pr-[64px] gap-[72px] bg-green text-white"
+          class="md:hidden absolute top-0 left-0 right-0 bottom-0 bg-white bg-opacity-50"
+        ></div>
+        <div
+          class="lg:basis-1/2 md:basis-[55%] basis-full flex flex-col justify-center items-start pt-6 pb-6 xl:pl-16 xl:pr-16 lg:pl-10 lg:pr-10 pl-4 pr-4 xl:gap-28 gap-6 lg:gap-12 md:bg-green bg-transparent text-white z-10"
         >
-          <div>
+          <div class="flex flex-col 2xl:gap-5 md:text-white text-black">
             <p class="text-[12px]">O firmie</p>
-            <p class="text-[48px]">
+            <p class="xl:text-5xl lg:text-4xl text-3xl">
               Tworzymy <br />
               z <em>pasją</em>
             </p>
-            <p class="text-[16px] mt-6">
+            <p class="text-base mt-6">
               Każdy projekt to nowe wyzwanie. Dlatego nasz zespół tworzą
               wykwalifikowani projektanci oraz architekci, których zadaniem jest
               rozpoznanie i realizacja potrzeb każdego Klienta. Nasza
@@ -420,7 +531,7 @@
             </p>
           </div>
           <button
-            class="flex h-[50px] text-[16px] group justify-center items-center bg-transparent gap-2 border-[1px] border-white rounded-full pl-3 pr-3 pt-2 pb-2"
+            class="flex h-[50px] text-base group justify-center items-center bg-transparent gap-2 border-[1px] md:border-white border-black md:text-white text-black rounded-full pl-3 pr-3 pt-2 pb-2"
           >
             Poznaj nas bliżej
             <img
@@ -431,10 +542,14 @@
           </button>
         </div>
       </section>
-      <section class="w-full bg-beige">
-        <div class="w-full pt-[120px] pb-[96px] pl-10 pr-10">
+      <section id="sectionProjects" class="w-full bg-beige">
+        <div
+          class="w-full xl:pt-32 xl:pb-32 md:pt-14 md:pb-14 pb-10 pt-10 pl-10 pr-10 flex flex-col 2xl:gap-5"
+        >
           <p class="text-[12px]">Realizacje</p>
-          <p class="text-[48px]">Nasze <em>projekty</em></p>
+          <p class="xl:text-5xl lg:text-4xl md:text-3xl">
+            Nasze <em>projekty</em>
+          </p>
         </div>
         <div class="relative">
           <div
@@ -442,7 +557,7 @@
           >
             <button
               id="btnLoadMoreImg"
-              class="flex pointer-events-auto mt-12 h-[50px] text-[16px] group justify-center items-center bg-transparent gap-2 border-[1px] border-black rounded-full pl-3 pr-3 pt-2 pb-2"
+              class="flex pointer-events-auto mt-64 h-[50px] text-base group justify-center items-center bg-transparent gap-2 border-[1px] border-black rounded-full pl-3 pr-3 pt-2 pb-2"
             >
               Rozwiń<img
                 class="group-hover:animate-bounce customBlackSVG"
@@ -528,56 +643,62 @@
         </div>
       </section>
       <section
-        class="flex justify-center items-center pl-52 pr-52 pt-12 pb-12 bg-white"
+        class="flex justify-center items-center xl:pl-44 xl:pr-44 lg:pl-32 lg:pr-32 md:px-12 px-6 md:py-12 py-6 bg-white"
       >
         <div
-          class="bg-green w-full h-full flex pt-16 pb-16 pl-8 pr-8 justify-around text-white"
+          class="bg-green w-full h-full flex md:py-16 py-10 md:px-8 px-6 justify-around items-center text-white flex-col sm:flex-row gap-6 md:gap-0"
         >
-          <div>
-            <p class="text-[40px]">
+          <div class="w-full sm:w-fit flex justify-start">
+            <p class="xl:text-4xl text-3xl">
               Zostańmy w kontakcie! <br />
               Znajdziesz nas na <em>Instagramie.</em>
             </p>
           </div>
-          <div class="">
+          <div class="w-full sm:w-fit">
             Śledź nasze <br />
             najnowsze realizacje!
             <button
-              class="flex mt-6 h-[50px] text-[16px] text-green group justify-center items-center bg-white gap-2 border-[1px] border-white rounded-full pl-3 pr-3 pt-2 pb-2"
+              class="flex mt-6 h-[50px] text-base text-green group justify-center items-center bg-white gap-2 border-[1px] border-white rounded-full pl-3 pr-3 pt-2 pb-2"
             >
               Instagram
             </button>
           </div>
         </div>
       </section>
-      <footer class="bg-black flex flex-col pl-52 pr-52 pt-12 pb-12 text-white">
-        <div class="flex justify-between">
+      <footer
+        class="bg-black flex flex-col xl:px-52 lg:px-32 px-6 py-6 text-white"
+      >
+        <div
+          class="flex md:flex-row flex-col justify-between md:items-center gap-6 md:gap-0"
+        >
           <div>
             <img src="src/assets/images/logo/giarddesignWhite.svg" alt="" />
           </div>
-          <div class="flex justify-center items-center gap-6">
+          <div
+            class="flex md:flex-row flex-col justify-center md:items-center gap-6 w-fit"
+          >
             <p>Daj znać, co możemy dla Ciebie zrobić!</p>
             <button
-              class="flex h-[50px] text-[16px] text-white group justify-center items-center bg-green gap-2 border-[1px] border-white rounded-full pl-3 pr-3 pt-2 pb-2"
+              class="flex h-[50px] text-base text-white group justify-center items-center bg-green gap-2 border-[1px] border-white rounded-full pl-3 pr-3 pt-2 pb-2"
             >
               Skontaktuj się z nami
             </button>
           </div>
         </div>
         <span class="bg-lightBeige w-full h-[1px] mt-12"></span>
-        <div class="flex justify-between">
-          <ul class="flex gap-12">
+        <div class="flex md:flex-row flex-col justify-between gap-6 md:gap-0">
+          <ul class="flex xl:gap-12 gap-6 justify-start md:mt-0 mt-6 flex-wrap">
             <li class="cursor-pointer"><a href="#"></a>Kontakt</li>
             <li class="cursor-pointer"><a href="#"></a>Instagram</li>
             <li class="cursor-pointer"><a href="#"></a>Facebook</li>
             <li class="cursor-pointer"><a href="#"></a>LinkedIn</li>
           </ul>
-          <div class="flex gap-12">
+          <div class="flex xl:gap-12 gap-6 justify-start flex-wrap">
             <p>000-000-000</p>
             <p>giarddesign@kontakt.pl</p>
           </div>
         </div>
-        <div class="flex mt-32 justify-between">
+        <div class="flex md:flex-row flex-col md:mt-32 mt-12 justify-between">
           <p>Prawa zastrzeżone &copy 2022</p>
           <div class="flex gap-4">
             <p>made by</p>
