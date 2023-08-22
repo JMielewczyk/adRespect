@@ -2831,6 +2831,10 @@ video {
   transition-duration: 150ms;
 }
 
+.duration-500 {
+  transition-duration: 500ms;
+}
+
 .ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
@@ -2860,7 +2864,7 @@ video {
 }
 
 @media (min-width: 768px) {
-  .customRightArrow {
+  .customArrow {
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(154deg)
       brightness(105%) contrast(101%);
   }
@@ -2869,6 +2873,19 @@ video {
 .customBlackSVG {
   filter: invert(0%) sepia(0%) saturate(22%) hue-rotate(353deg) brightness(92%)
     contrast(105%);
+}
+
+.activeBox,
+.activeInverseText {
+  transform: rotateY(180deg);
+}
+
+.activeInverseText {
+  display: block;
+}
+
+.activeHide {
+  display: none;
 }
 
 @media (min-width: 640px) {
@@ -2947,10 +2964,6 @@ video {
 
 .hover\:focus\:text-center:focus:hover {
   text-align: center;
-}
-
-.active\:\[transform\:rotateY\(180deg\)\]:active {
-  transform: rotateY(180deg);
 }
 
 @keyframes bounce {
@@ -3036,10 +3049,6 @@ video {
 
   .md\:w-\[40\%\] {
     width: 40%;
-  }
-
-  .md\:w-full {
-    width: 100%;
   }
 
   .md\:basis-1\/4 {

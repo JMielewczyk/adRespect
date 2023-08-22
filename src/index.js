@@ -92,7 +92,7 @@ magnifier.addEventListener("click", () => {
 });
 
 // ---------------------------------------------------------------------------
-// Header - slideShow + manual change. After manual change there is a delay of 1 second to next timeout.
+// Header - slideShow + manual change. After manual change there is a delay of 1 second to next interval.
 
 const header = document.querySelector("#header");
 
@@ -169,10 +169,34 @@ btnsScroll.forEach((btn) => {
   });
 });
 
+//-------------------------------------------------------------------------
+
+//Section 1 - under Header. After click element is making rotation on X axis of 180deg.
+// Elements on front side hide and on the back(front after click) they appear visible.
+
+const boxesSection1 = document.querySelectorAll('[data-id="boxSection1"');
+boxesSection1.forEach((box) => {
+  box.addEventListener("click", () => {
+    const childs = [...box.children];
+    setTimeout(() => {
+      childs.forEach((child) => {
+        if (child.dataset.id === "inverseText") {
+          child.classList.toggle("activeInverseText");
+        } else {
+          child.classList.toggle("activeHide");
+        }
+      });
+    }, 150);
+    box.classList.toggle("activeBox");
+  });
+});
+
 // -----------------------------------------------------------------
+
 // Photos section. After clicking button 10 more images are being fetched from random images API.
 // Then new elements are being created and appended to photos section container.
 // This is a small simulation of how it could be working when fetching images from server.
+// After clicking on photo pop up will appear and will fetch a full resolution image - only for previously fetched images from API.
 
 // Macy.js used for styling the section of photos.
 const macyContainer = document.getElementById("macy-container");

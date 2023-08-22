@@ -186,13 +186,13 @@
               class="flex h-[50px] w-full xl:gap-9 lg:gap-6 gap-4 md:justify-start md:flex-row flex-col"
             >
               <button
-                class="flex md:w-full w-fit justify-center items-center bg-green text-white rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
+                class="flex w-fit justify-center items-center bg-green text-white rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
               >
                 Skontaktuj sie z nami
               </button>
               <button
                 data-id="btnScroll"
-                class="flex md:w-full w-fit text-base group justify-center items-center bg-transparent gap-2 border-[1px] border-green rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
+                class="flex w-fit text-base group justify-center items-center bg-transparent gap-2 border-[1px] border-green rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
               >
                 Zobacz nasze realizacje
                 <img
@@ -237,17 +237,17 @@
               class="flex h-[50px] w-full xl:gap-9 lg:gap-6 gap-4 md:justify-start justify-around md:flex-row flex-col"
             >
               <button
-                class="flex w-fit md:w-full justify-center items-center bg-beige text-white rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
+                class="flex w-fit justify-center items-center bg-beige text-white rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
               >
                 Skontaktuj sie z nami
               </button>
               <button
                 data-id="btnScroll"
-                class="flex w-fit md:w-full text-base group justify-center items-center bg-transparent gap-2 border-[1px] border-beige rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
+                class="flex w-fit text-base group justify-center items-center bg-transparent gap-2 border-[1px] border-beige rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
               >
                 Zobacz nasze realizacje
                 <img
-                  class="h-[16px] group-hover:animate-bounce customWhiteSvg"
+                  class="h-[16px] group-hover:animate-bounce customArrow"
                   src="src/assets/images/misc/vector.svg"
                   alt=""
                 />
@@ -286,13 +286,13 @@
               class="flex h-[50px] w-full xl:gap-9 lg:gap-6 gap-4 md:justify-start justify-around md:flex-row flex-col"
             >
               <button
-                class="flex w-fit md:w-full justify-center items-center bg-green text-white rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
+                class="flex w-fit justify-center items-center bg-green text-white rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
               >
                 Skontaktuj sie z nami
               </button>
               <button
                 data-id="btnScroll"
-                class="flex w-fit md:w-full text-base group justify-center items-center bg-transparent gap-2 border-[1px] border-green rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
+                class="flex w-fit text-base group justify-center items-center bg-transparent gap-2 border-[1px] border-green rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
               >
                 Zobacz nasze realizacje
                 <img
@@ -337,17 +337,17 @@
               class="flex h-[50px] w-full xl:gap-9 lg:gap-6 gap-4 md:justify-start justify-around flex-col md:flex-row"
             >
               <button
-                class="flex w-fit md:w-full justify-center items-center bg-beige text-white rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
+                class="flex w-fit justify-center items-center bg-beige text-white rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
               >
                 Skontaktuj sie z nami
               </button>
               <button
                 data-id="btnScroll"
-                class="flex w-fit md:w-full text-base group justify-center items-center bg-transparent gap-2 border-[1px] border-beige rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
+                class="flex w-fit text-base group justify-center items-center bg-transparent gap-2 border-[1px] border-beige rounded-full xl:pl-3 xl:pr-3 pl-4 pr-4 pt-2 pb-2"
               >
                 Zobacz nasze realizacje
                 <img
-                  class="h-[16px] group-hover:animate-bounce"
+                  class="h-[16px] group-hover:animate-bounce customArrow"
                   src="src/assets/images/misc/vector.svg"
                   alt=""
                 />
@@ -404,21 +404,34 @@
           class="flex md:justify-between lg:justify-start lg:gap-12 gap-14 lg:flex-nowrap flex-wrap"
         >
           <div
-            class="bg-white md:w-[40%] rounded-3xl p-12 group hover:bg-green active:[transform:rotateY(180deg)] transition-all hover:text-white sectionBox"
+            data-id="boxSection1"
+            class="bg-white md:w-[40%] rounded-3xl p-12 group hover:bg-green transition-all duration-500 hover:text-white sectionBox"
           >
+            <p data-id="inverseText" class="hidden">
+              Stworzymy dla Ciebie nowoczesny ogród, harmonijnie komponujący się
+              z otoczeniem, a także wykorzystamy każdy centymetr dostępnej
+              przestrzeni. Nasz zespół projektantów ogród wyczaruje dla Ciebie
+              przestrzeń, w której nowoczesność spotka się z funkcjonalnością,
+              tworząc unikalne miejsce do relaksu. Wykorzystamy kreatywne
+              podejście, aby Twój ogród w nowoczesnym stylu stał się oazą
+              estetyki i praktyczności, z dbałością o każdy szczegół.
+            </p>
             <img
+              data-id="childFront"
               class="customWhiteSvg"
               src="src/assets/images/misc/pencilIcon.svg"
               alt=""
             />
-            <p class="text-[28px] mt-6">Projekty</p>
-            <p class="text-[14px] mt-3">
+            <p data-id="childFront" class="text-[28px] mt-6">Projekty</p>
+            <p data-id="childFront" class="text-[14px] mt-3">
               Zaprojektujemy Twój ogród w nowoczesnym stylu i z najlepszym
               wykorzystaniem istniejącej przestrzeni.
             </p>
             <a
+              data-id="childFront"
               class="flex justify-start items-center text-base group-hover:text-white text-green mt-12 h-6 underline underline-offset-4"
               href="#"
+              onclick="return false"
               >Dowiedz się więcej
               <svg
                 class="fill-green group-hover:fill-white"
@@ -435,8 +448,19 @@
             </a>
           </div>
           <div
-            class="bg-white md:w-[40%] rounded-3xl p-12 group hover:text-white hover:bg-green transition-all sectionBox"
+            data-id="boxSection1"
+            class="bg-white md:w-[40%] rounded-3xl p-12 group hover:text-white hover:bg-green transition-all duration-500 sectionBox"
           >
+            <p data-id="inverseText" class="hidden">
+              Oferujemy Ci możliwość odkrycia Twojego przyszłego ogrodu dzięki
+              zaawansowanym projektom 3D, które pozwolą Ci na wirtualny spacer
+              po przestrzeni jeszcze przed realizacją. Dzięki innowacyjnym
+              narzędziom wizualizacyjnym przedstawimy Ci różnorodne koncepcje
+              ogrodu za pomocą animowanego spaceru 3D, umożliwiając Ci wybór
+              idealnego projektu. Nasze zaawansowane technologie pozwolą Ci
+              zanurzyć się w wirtualnym świecie swojego przyszłego ogrodu, dając
+              Ci wyjątkową możliwość interakcji z projektem koncepcyjnym.
+            </p>
             <img
               class="customWhiteSvg"
               src="src/assets/images/misc/eyeIcon.svg"
@@ -451,6 +475,7 @@
             <a
               class="flex justify-start items-center text-base group-hover:text-white text-green mt-12 h-6 underline underline-offset-4"
               href="#"
+              onclick="return false"
               >Dowiedz się więcej
               <svg
                 class="fill-green group-hover:fill-white"
@@ -467,8 +492,19 @@
             </a>
           </div>
           <div
-            class="bg-white md:w-[40%] md:my-0 md:mx-auto lg:mx-0 rounded-3xl p-12 group hover:bg-green hover:text-white transition-all sectionBox"
+            data-id="boxSection1"
+            class="bg-white md:w-[40%] md:my-0 md:mx-auto lg:mx-0 rounded-3xl p-12 group hover:bg-green hover:text-white transition-all duration-500 sectionBox"
           >
+            <p data-id="inverseText" class="hidden">
+              Marzenie o wymarzonym ogrodzie stanie się rzeczywistością dzięki
+              naszemu zespołowi, który wykorzysta najnowsze rozwiązania i
+              technologie, aby je zrealizować. Nasz priorytet to spełnianie
+              marzeń klientów, dlatego zastosujemy innowacyjne metody i
+              zaawansowane technologie, by osiągnąć efekt, którego pragniesz.
+              Zaufaj nam, by wcielić w życie Twoją wizję ogrodu, korzystając z
+              najnowszych trendów i technologicznych osiągnięć, które dodadzą
+              Twojemu ogrodowi wyjątkowego charakteru.
+            </p>
             <img
               class="customWhiteSvg"
               src="src/assets/images/misc/starsIcon.svg"
@@ -482,6 +518,7 @@
             <a
               class="flex justify-start items-center text-base group-hover:text-white text-green mt-12 h-6 underline underline-offset-4"
               href="#"
+              onclick="return false"
               >Dowiedz się więcej
               <svg
                 class="fill-green group-hover:fill-white"
@@ -535,7 +572,7 @@
           >
             Poznaj nas bliżej
             <img
-              class="h-[100%] group-hover:animate-pulse customRightArrow"
+              class="h-[100%] group-hover:animate-pulse customArrow"
               src="src/assets/images/misc/rightArrow.svg"
               alt=""
             />
